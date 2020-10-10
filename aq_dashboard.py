@@ -18,7 +18,8 @@ class Record(DB.Model):
     value = DB.Column(DB.Float, nullable=False)
 
     def __repr__(self):
-        return '<Datetime %r>  <Value %r>' %(self.datetime, self.value)
+        return f'{self.datetime}, {self.value}'
+
 
 
 @APP.route('/')
@@ -33,10 +34,7 @@ def root():
         db_record = Record(datetime=d.get('date').get('utc'), value=d.get('value'))
         DB.session.add(db_record)
     DB.session.commit()
-    l = Record.query.filter(Record.value >= 10).all()
-    return str(l)
-
-
+    return str(Record.query.filter(Record.value >= 10).all())
 
 
 @APP.route('/refresh')
