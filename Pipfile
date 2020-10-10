@@ -4,11 +4,14 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+autopep8 = "*"
+pylint = "*"
 
 [packages]
 flask = "*"
 flask-sqlalchemy = "*"
 requests = "*"
+py-openaq = "*"
 
 [requires]
 python_version = "3.8"

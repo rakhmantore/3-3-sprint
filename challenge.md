@@ -5,7 +5,7 @@
 In this sprint challenge you will build a Flask-powered web application that
 displays data about air quality. You may use any tools and references you wish,
 but your final code should reflect *your* work and be saved in `.py` files
-(*not* notebooks), and turned in directly to your TL. 
+(*not* notebooks), and turned in directly to your TL.
 
 You may use any imports/environments/tools you wish, but the baseline is:
 - `flask`, `flask-sqlalchemy` to build the application and data models
@@ -144,7 +144,7 @@ and then incorporate the specific request
   ('2019-03-07T23:00:00.000Z', 8.13)]`
 - Return this list in the main route, so loading the web application prints the
   raw list of tuples of datetimes and values
-  
+
 Getting this list of tuples may be trickier than you think - the API returns
 dictionaries inside dictionaries! You may want to use the REPL to experiment and
 iterate until you find working code, and then add it to your application.
@@ -171,6 +171,7 @@ following code to `aq_dashboard.py`:
 from flask_sqlalchemy import SQLAlchemy
 
 APP.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+
 DB = SQLAlchemy(APP)
 
 
